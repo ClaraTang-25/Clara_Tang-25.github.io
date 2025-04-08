@@ -1,0 +1,521 @@
+:root {
+    --primary-color: #1a5276;
+    --secondary-color: #2874a6;
+    --accent-color: #3498db;
+    --accent-color-2: #9b59b6;
+    --accent-color-3: #16a085;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(to right, #f5f7fa, #e4e8ef);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.profile-info {
+    flex: 1;
+    text-align: left;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chinese-name {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+}
+
+.institution {
+    color: var(--accent-color);
+}
+
+nav {
+    margin-bottom: 3rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 0.8rem;
+}
+
+.timeline, .research-items, .publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.contact-label {
+    min-width: 80px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--light-gray);
+}
+
+.education-item {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--accent-color-2);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.degree {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.period {
+    color: var(--accent-color-2);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-info {
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* 技能模块样式 */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-category {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--accent-color-3);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background-color: rgba(22, 160, 133, 0.1);
+    color: var(--accent-color-3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color-3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.language-item {
+    margin-top: 1rem;
+}
+
+.language-name {
+    font-weight: 500;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.language-details {
+    margin-left: 1rem;
+}
+
+.language-component {
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+/* 奖项模块样式 - 修改后 */
+.awards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.award-item {
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-left: 3px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.award-content {
+    padding: 1.5rem;
+}
+
+.award-list {
+    list-style: none;
+}
+
+.award-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 0.5rem;
+    line-height: 1.5;
+    font-size: 1.05rem;
+    color: var(--primary-color);
+}
+
+.award-date {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-right: 0.8rem;
+}
+
+/* 移除不再需要的样式 */
+.award-year, .award-issuer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .skill-tags {
+        justify-content: center;
+    }
+    
+    .award-item {
+        flex-direction: column;
+    }
+    
+    .award-year {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+/* 研究经验模块样式 */
+.research-item {
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent-color-2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.research-header h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.research-period {
+    color: var(--accent-color-2);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.research-institution {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.research-description p {
+    margin-bottom: 0.8rem;
+}
+
+.research-description ul {
+    padding-left: 1.5rem;
+}
+
+.research-description li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* 兴趣爱好模块样式 */
+.interests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.interest-item {
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--accent-color-3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.interest-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.interest-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.interest-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.interest-note {
+    background-color: rgba(22, 160, 133, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.interest-note p {
+    margin-bottom: 0;
+    color: var(--accent-color-3);
+}
+
+.interest-note strong {
+    color: var(--primary-color);
+}
+
+/* 论文发表模块样式 */
+.publication-note {
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--accent-color);
+}
+
+.publication-status {
+    margin-top: 1rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-tag {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Jellycat龙虾图片样式 */
+.jellycat-banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+#jellycat-image {
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#jellycat-image:hover {
+    transform: scale(1.05);
+} 
